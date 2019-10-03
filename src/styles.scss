@@ -2,9 +2,22 @@
 
 
 .navbar-inverse {
-    background-color: #062954;
-    border-color: #062954;
+    border-radius: 0px !important;
+    background-color: #3b5998!important;
+    border-color: #3b5998!important;
     .navbar-brand {
         padding:2px 15px;
     }
+    .nav.navbar-nav{
+        li>a{
+        color: #fff !important;
+        }
+    }
+    color: #fff;
+}
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:focus,
+.navbar-inverse .navbar-nav>.active>a:hover
+{
+    background-color: #cd3232 !important;
 }

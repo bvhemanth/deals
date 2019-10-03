@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetserviceService } from '../services/getservice.service';
 
 @Component({
   selector: 'app-mainpage',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainpageComponent implements OnInit {
 
-  constructor() { }
+  dealsData :any =[];
+
+  constructor(private _get : GetserviceService) { }
 
   ngOnInit() {
+    this._get.getData().subscribe((response: Response) => {
+      console.log(response);
+      let resp= response;
+      this.dealsData=resp;
+    });  
   }
 
 }
