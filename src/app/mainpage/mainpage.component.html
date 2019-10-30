@@ -2,16 +2,15 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6 col-md-6 col-lg-6">
-
+            <input type="search" class="form-control" placeholder="Serch by area or city"/>
         </div>
         <div class="col-sm-3 col-md-3 col-lg-3">
-           
         </div>
         <div class="col-sm-3 col-md-3 col-lg-3">
-            <select>
+            <select [(ngModel)]="order">
                 <option value="none" selected disabled hidden>Sort</option>
-                <option>A-Z</option>
-                <option>Z-A</option>
+                <option value="name">A-Z</option>
+                <option value="reversename">Z-A</option>
             </select>
             <select>
                 <option value="none" selected disabled hidden>Filter</option>
@@ -22,18 +21,26 @@
     </div>
     <div class="row">
         <h2>TODAY’S LOCAL DEALS</h2>
-        <div class="col-sm-4 col-md-4 col-lg-4" *ngFor="let data of dealsData.response">
-            <div class="eachcard">
+        <div class="col-sm-4 col-md-4 col-lg-4" *ngFor="let data of dealsData | sort : order : reverse">
+            <div>
+                <a href="https://web.whatsapp.com/send?text=http://maps.google.com/maps?q=12.9561309, 77.695233&z=15&output=embed ,_{{data.name}} ,{{data.phoneNumber}}" data-text="Take a look at this awesome website:" class="wa_btn wa_btn_s" style="display:block" target="_blank">
+                    <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="eachcard" mat-raised-button (click)="showDialogue(data)">
                 <div class="eachcard_shopname">
                     {{data.name}}
                 </div>
                 <div>
-                    <i class="fa fa-male" aria-hidden="true"></i>
-                    <i class="fa fa-female" aria-hidden="true"></i>
+                    <i class="fa fa-phone" aria-hidden="true"></i>{{data.phoneNumber}}
                 </div>
                 <div class="eachcard_address">
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                     <p>{{data.address}}</p>
+                </div>
+                <div>
+                    <i class="fa fa-male" aria-hidden="true"></i>{{data.Moffers}}%
+                    <i class="fa fa-female" aria-hidden="true"></i>{{data.Foffers}}%
                 </div>
             </div>
         </div>

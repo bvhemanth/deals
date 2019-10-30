@@ -6,10 +6,13 @@
     padding:10px;
     border: 1px solid #d9e0e2;
     transition: all .3s;
+    color:#000;
+    border-left:5px solid #c53727;
+    background-color: #fff;
     &:hover {
         cursor: pointer;
         box-shadow: 0 15px 20px rgba(0,0,0,0.2);
-        transform: translate(0, -4px);
+        transform: translate(0, -3px);
     }
     .eachcard_shopname{
         font-size: 17px;
@@ -24,7 +27,7 @@
         
         font-size: 14px;
         i{
-            font-size: 24px;
+            //font-size: 24px;
             color: #000;
             margin-right: 10px;
             vertical-align: top;
@@ -34,9 +37,12 @@
             width: 80%;
         }
     }
+    i{
+        margin-right: 10px;
+    }
 }
 h2{
     font-weight: bold;
     font-size: 20px;
-    color:#4a4a4a;
+    color:#000;
 }
