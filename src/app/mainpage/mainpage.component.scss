@@ -7,7 +7,7 @@
     border: 1px solid #d9e0e2;
     transition: all .3s;
     color:#000;
-    border-left:5px solid #c53727;
+    border-left:5px solid #258da8;;
     background-color: #fff;
     &:hover {
         cursor: pointer;
@@ -45,4 +45,10 @@ h2{
     font-weight: bold;
     font-size: 20px;
     color:#000;
+}
+.filters{
+    height:30px;
+    width:100px;
+    background-color: #fff;
+    border:1px solid #ddd;
 }
